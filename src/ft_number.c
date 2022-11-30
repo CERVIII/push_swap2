@@ -6,7 +6,7 @@
 /*   By: pcervill <pcervill@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 09:59:38 by pcervill          #+#    #+#             */
-/*   Updated: 2022/11/21 10:10:52 by pcervill         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:41:45 by pcervill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,9 @@ void	checkparams(char **argv)
 		while (argv[i][j])
 		{
 			if ((argv[i][j] < 48 || argv[i][j] > 57) && argv[i][j] != 45)
-			{
 				ft_error("ERROR:\nArgumentos no validos\n");
-				exit (1);
-			}
 			if (argv[i][j + 1] == 45)
-			{
-				printf("ERROR:\nArgumentos no validos\n");
-				exit (1);
-			}
+				ft_error("ERROR:\nArgumentos no validos\n");
 			j++;
 		}
 		i++;
@@ -72,10 +66,7 @@ void	norepeat(int *number)
 		while (number[j])
 		{
 			if (number[i] == number[j])
-			{
-				printf("ERROR:\nArgumentos repetidos\n");
-				exit (1);
-			}
+				ft_error("ERROR:\nArgumentos repetidos\n");
 			j++;
 		}
 		i++;
